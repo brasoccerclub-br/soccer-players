@@ -2,10 +2,21 @@ package br.com.brasoccerclub.soccerplayers.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "team")
 public class Team implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
 	private String name;
 	private String acronym;
 	private String city;
@@ -14,7 +25,7 @@ public class Team implements Serializable {
 	public Team() {
 	}
 
-	public Team(Integer id, String name, String acronym, String city, String state) {
+	public Team(Long id, String name, String acronym, String city, String state) {
 		this.id = id;
 		this.name = name;
 		this.acronym = acronym;
@@ -22,11 +33,11 @@ public class Team implements Serializable {
 		this.state = state;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -3,20 +3,42 @@ package br.com.brasoccerclub.soccerplayers.entities;
 import java.io.Serializable;
 import java.time.Instant;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "player")
 public class Player implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
 	private String name;
 	private Integer jerseyNumber;
+	
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant birthDate;
+	
+	@ManyToOne()
+	@JoinColumn(name = "team_id")
 	private Team team;
+	
+	@ManyToOne()
+	@JoinColumn(name = "position_id")
 	private Position position;
 	
 	public Player() {
 	}
 
-	public Player(Integer id, String name, Integer jerseyNumber, Instant birthDate, Team team, Position position) {
+	public Player(Long id, String name, Integer jerseyNumber, Instant birthDate, Team team, Position position) {
 		this.id = id;
 		this.name = name;
 		this.jerseyNumber = jerseyNumber;
@@ -25,11 +47,11 @@ public class Player implements Serializable {
 		this.position = position;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

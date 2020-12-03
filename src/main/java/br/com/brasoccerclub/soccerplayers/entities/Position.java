@@ -2,27 +2,38 @@ package br.com.brasoccerclub.soccerplayers.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "position")
 public class Position implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
 	private String name;
 	private String fieldArea;
 	
 	public Position() {
 	}
 
-	public Position(Integer id, String name, String fieldArea) {
+	public Position(Long id, String name, String fieldArea) {
 		this.id = id;
 		this.name = name;
 		this.fieldArea = fieldArea;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
