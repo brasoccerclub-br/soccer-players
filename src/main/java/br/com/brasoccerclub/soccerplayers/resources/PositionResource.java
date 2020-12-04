@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.brasoccerclub.soccerplayers.entities.Position;
+import br.com.brasoccerclub.soccerplayers.dto.PositionDTO;
 import br.com.brasoccerclub.soccerplayers.services.PositionService;
 
 @RestController
@@ -19,8 +19,8 @@ public class PositionResource {
 	private PositionService service;
 	
 	@GetMapping
-	public ResponseEntity<List<Position>> findAll() {
-		List<Position> list = service.findAll();
+	public ResponseEntity<List<PositionDTO>> findAll() {
+		List<PositionDTO> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 }
