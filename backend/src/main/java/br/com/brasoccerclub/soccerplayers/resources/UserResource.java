@@ -22,6 +22,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.brasoccerclub.soccerplayers.dto.UserDTO;
 import br.com.brasoccerclub.soccerplayers.dto.UserInsertDTO;
+import br.com.brasoccerclub.soccerplayers.dto.UserUpdateDTO;
 import br.com.brasoccerclub.soccerplayers.services.UserService;
 
 @RestController
@@ -59,9 +60,9 @@ public class UserResource {
 	}
 
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<UserDTO> update(@PathVariable Long id, @Valid @RequestBody UserDTO dto) {
-		dto = service.update(id, dto);
-		return ResponseEntity.ok().body(dto);
+	public ResponseEntity<UserDTO> update(@PathVariable Long id, @Valid @RequestBody UserUpdateDTO dto) {
+		UserDTO newDto = service.update(id, dto);
+		return ResponseEntity.ok().body(newDto);
 	}
 
 	@DeleteMapping(value = "/{id}")

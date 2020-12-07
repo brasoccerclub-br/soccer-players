@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import br.com.brasoccerclub.soccerplayers.dto.RoleDTO;
 import br.com.brasoccerclub.soccerplayers.dto.UserDTO;
 import br.com.brasoccerclub.soccerplayers.dto.UserInsertDTO;
+import br.com.brasoccerclub.soccerplayers.dto.UserUpdateDTO;
 import br.com.brasoccerclub.soccerplayers.entities.Role;
 import br.com.brasoccerclub.soccerplayers.entities.User;
 import br.com.brasoccerclub.soccerplayers.repositories.RoleRepository;
@@ -57,7 +58,7 @@ public class UserService {
 	}
 
 	@Transactional
-	public UserDTO update(Long id, UserDTO dto) {
+	public UserDTO update(Long id, UserUpdateDTO dto) {
 		try {
 			User entity = repository.getOne(id);
 			copyDtoToEntity(dto, entity);
