@@ -30,12 +30,12 @@ public class PlayerDTO implements Serializable {
 	}
 	
 	public PlayerDTO(Player entity) {
-		this.id = entity.getId();
-		this.name = entity.getName();
-		this.jerseyNumber = entity.getJerseyNumber();
-		this.birthDate = entity.getBirthDate();
-		this.team = entity.getTeam();
-		this.position = entity.getPosition();
+		id = entity.getId();
+		name = entity.getName();
+		jerseyNumber = entity.getJerseyNumber();
+		birthDate = entity.getBirthDate();
+		team = entity.getTeam();
+		position = entity.getPosition();
 	}
 
 	public Long getId() {

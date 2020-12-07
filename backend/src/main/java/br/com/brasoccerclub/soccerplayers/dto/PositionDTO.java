@@ -17,13 +17,13 @@ public class PositionDTO implements Serializable {
 	public PositionDTO(Long id, String name, String fieldArea) {
 		this.id = id;
 		this.name = name;
-		this.setFieldArea(fieldArea);
+		this.fieldArea = fieldArea;
 	}
 	
 	public PositionDTO(Position entity) {
-		this.id = entity.getId();
-		this.name = entity.getName();
-		this.setFieldArea(entity.getFieldArea());
+		id = entity.getId();
+		name = entity.getName();
+		fieldArea = entity.getFieldArea();
 	}
 
 	public Long getId() {
