@@ -2,6 +2,8 @@ package br.com.brasoccerclub.soccerplayers.resources;
 
 import java.net.URI;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -40,20 +42,20 @@ public class TeamResource {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<TeamDTO> findById(@PathVariable Long id) {
+	public ResponseEntity<TeamDTO> findById(@Valid @PathVariable Long id) {
 		TeamDTO dto = service.findById(id);
 		return ResponseEntity.ok().body(dto);
 	}
 
 	@PostMapping
-	public ResponseEntity<TeamDTO> insert(@RequestBody TeamDTO dto) {
+	public ResponseEntity<TeamDTO> insert(@Valid @RequestBody TeamDTO dto) {
 		dto = service.insert(dto);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
 		return ResponseEntity.created(uri).body(dto);
 	}
 
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<TeamDTO> update(@PathVariable Long id, @RequestBody TeamDTO dto) {
+	public ResponseEntity<TeamDTO> update(@PathVariable Long id, @Valid @RequestBody TeamDTO dto) {
 		dto = service.update(id, dto);
 		return ResponseEntity.ok().body(dto);
 	}

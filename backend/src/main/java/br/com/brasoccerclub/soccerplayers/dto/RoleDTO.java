@@ -2,12 +2,16 @@ package br.com.brasoccerclub.soccerplayers.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotBlank;
+
 import br.com.brasoccerclub.soccerplayers.entities.Role;
 
 public class RoleDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
+	
+	@NotBlank(message = "O campo [authority] é obrigatório")
 	private String authority;
 
 	public RoleDTO() {

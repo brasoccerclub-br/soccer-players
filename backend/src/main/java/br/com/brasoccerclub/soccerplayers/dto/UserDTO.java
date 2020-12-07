@@ -4,14 +4,25 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import br.com.brasoccerclub.soccerplayers.entities.User;
 
 public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
+	
+	@Size(min = 3, max = 20, message = "O campo [firstName] deve ter entre 5 e 20 caracteres")
+	@NotBlank(message = "O campo [firstName] é obrigatório")
 	private String firstName;
+	
+	@Size(min = 5, max = 40, message = "O campo [lastName] deve ter entre 5 e 20 caracteres")
+	@NotBlank(message = "O campo [lastName] é obrigatório")
 	private String lastName;
+	
+	@NotBlank(message = "O campo [email] é obrigatório")
 	private String email;
 
 	Set<RoleDTO> roles = new HashSet<>();
