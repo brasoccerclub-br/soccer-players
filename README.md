@@ -8,7 +8,7 @@ A seguir está a arquitetura utilizada no projeto:
 * Postman
 * Banco de dados H2
 * Swagger
-* API Rest
+* API REST
 
 Também fizemos uso do Cloud OAuth2, que tem a função de fazer a autenticação do user e a autorização de acesso ao sistema.
 
