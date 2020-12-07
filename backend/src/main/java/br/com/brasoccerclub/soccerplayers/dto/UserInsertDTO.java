@@ -2,6 +2,9 @@ package br.com.brasoccerclub.soccerplayers.dto;
 
 import javax.validation.constraints.NotBlank;
 
+import br.com.brasoccerclub.soccerplayers.services.validation.UserInsertValid;
+
+@UserInsertValid
 public class UserInsertDTO extends UserDTO {
 	private static final long serialVersionUID = 1L;
 	
