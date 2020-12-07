@@ -1,16 +1,16 @@
 # SOCCER PLAYERS
 REST API básica de gerenciamento de jogadores de futebol
 
-Para o desenvolvimento do projeto, foram necessárias a utilização de algumas ferramentas, como o Eclipe, Astah, Spring Boot e outros.
+Para o desenvolvimento do projeto, foram necessárias a utilização de algumas ferramentas, como o Astah, Spring Boot e outros.
 
 A seguir está a arquitetura utilizada no projeto:
 * Spring Boot
 * Postman
 * Banco de dados H2
-* Seagger
+* Swagger
 * API Rest
 
-Também fizemos uso do JCloud OAuth2, que tem a função de fazer  a autentificação do user e a autorização de acesso ao sistema.
+Também fizemos uso do Cloud OAuth2, que tem a função de fazer a autenticação do user e a autorização de acesso ao sistema.
 
 # Funcionalidades
 
@@ -23,14 +23,14 @@ Também fizemos uso do JCloud OAuth2, que tem a função de fazer  a autentifica
 
 * Usuários fazem cadastro de:
   * Cadastro de Jogadores
-	* Cadastro de Nome Jogadore
-	* Cadastro de Numero
+	* Cadastro de Nome Jogador
+	* Cadastro de Número
 	* Cadastro de Data Nascimento
 	* Cadastro de Time
 	* Cadastro de Posição
   * Cadastro de Times
 	* Cadastro de Nome Time
-	* Cadastro de Numero
+	* Cadastro de Número
 	* Cadastro de Cidade
 	* Cadastro de Estado
   * Cadastro de Posição
@@ -44,7 +44,7 @@ Também fizemos uso do JCloud OAuth2, que tem a função de fazer  a autentifica
 # Futuras Ferramentas
 
    * Conexões com outros serviços.
-   * Conexão com serviços Mobile.
+   * Conexão com serviços Mobile e Websites.
    * Conexão com ferramentas e serviços locais. 
    * Criação de testes Automatizados.
-   * Utilização de Banco e serviços Docker.
+   * Utilização de Banco de Dados e outras ferramentas na nuvem e serviços como Docker e Jenkins para DevOps.
