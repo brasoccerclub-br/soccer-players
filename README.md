@@ -40,6 +40,10 @@ Também fizemos uso do Cloud OAuth2, que tem a função de fazer a autenticaçã
 **Consulta**
 * O usuário pode consultar todas as informações das tabelas de Jogadores, Times e Posição.
 
+**Observações**
+* Senha do usuário admin: admin1234
+* Utilizar o endpoint /oauth/token para realizar login e receber o token de acesso.
+* Acessar documentação da API - Swagger: localhost:8080/swagger-ui.html
 
 # Futuras Ferramentas
 
